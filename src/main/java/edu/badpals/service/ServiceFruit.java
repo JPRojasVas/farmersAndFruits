@@ -22,11 +22,20 @@ public class ServiceFruit {
 
         Optional<Farmer> farmer = Farmer.find("name = ?1", fruit.getFarmer().getName()).firstResultOptional();
 
-        Fruit fruta = new Fruit(fruit.getName(), fruit.getDescription(), farmer.get());
+        if (farmer.isPresent()){
+            Fruit fruta = new Fruit(fruit.getName(), fruit.getDescription(), farmer.get());
 
-        fruta.persist();
+            fruta.persist();
+
+        } else {
+            Farmer newFarmer = new Farmer(fruit.getFarmer().getName(), fruit.getFarmer().getLocation());
+            newFarmer.persist();
+
+            Fruit fruta = new Fruit(fruit.getName(), fruit.getDescription(), newFarmer);
+
+            fruta.persist();
+        }
 
     }
-
 
 }
