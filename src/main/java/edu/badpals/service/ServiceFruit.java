@@ -38,4 +38,16 @@ public class ServiceFruit {
 
     }
 
+    public void remove(String nombre){
+
+        Optional<Fruit> fruta = Fruit.find("name = ?1", nombre).firstResultOptional();
+
+        if (fruta.isPresent()){
+
+            Fruit.delete("name = ?1", nombre);
+
+        }
+
+    }
+
 }
