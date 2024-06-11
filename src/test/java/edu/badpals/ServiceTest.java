@@ -56,7 +56,7 @@ public class ServiceTest {
         Assertions.assertThat(Farmer.count()).isEqualTo(2L);
     }
 
-/*
+
     // CORREGIR ESTE TEST PORQUE ES NUEVO
     @Test
     public void addFarmerTest() {
@@ -77,7 +77,7 @@ public class ServiceTest {
         Assertions.assertThat(Farmer.count()).isEqualTo(2L);
     }
 
-
+/*
     @Test
     public void removeTest(){
         service.remove("Apple");
