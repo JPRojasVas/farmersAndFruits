@@ -9,6 +9,8 @@ import jakarta.transaction.Transactional;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.Optional;
+
 @QuarkusTest
 @Transactional
 public class ServiceTest {
@@ -77,7 +79,7 @@ public class ServiceTest {
         Assertions.assertThat(Farmer.count()).isEqualTo(2L);
     }
 
-/*
+
     @Test
     public void removeTest(){
         service.remove("Apple");
@@ -95,7 +97,7 @@ public class ServiceTest {
         Assertions.assertThat(Fruit.count()).isEqualTo(2);
     }
 
-
+/*
     @Test
     public void getFruitTest() {
         Assertions.assertThat(service.getFruit("Apple")).get().hasFieldOrPropertyWithValue("name", "Apple").hasFieldOrPropertyWithValue("description", "Winter fruit").extracting("farmer").toString().compareTo("Farmer Rick, Sa Pobla");
