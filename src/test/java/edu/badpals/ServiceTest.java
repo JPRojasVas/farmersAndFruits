@@ -1,5 +1,6 @@
 package edu.badpals;
 
+import edu.badpals.domain.Farmer;
 import edu.badpals.domain.Fruit;
 import edu.badpals.service.ServiceFruit;
 import io.quarkus.test.junit.QuarkusTest;
@@ -38,7 +39,7 @@ public class ServiceTest {
         Assertions.assertThat(service.list().stream().anyMatch(f -> f.getName().equals("Apple"))).isTrue();
     }
 
-/*
+
     @Test
     public void addTest() {
         service.add(new Fruit("Banana",
@@ -55,7 +56,7 @@ public class ServiceTest {
         Assertions.assertThat(Farmer.count()).isEqualTo(2L);
     }
 
-
+/*
     // CORREGIR ESTE TEST PORQUE ES NUEVO
     @Test
     public void addFarmerTest() {
