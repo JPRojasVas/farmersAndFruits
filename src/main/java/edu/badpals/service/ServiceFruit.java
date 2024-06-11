@@ -50,4 +50,18 @@ public class ServiceFruit {
 
     }
 
+    public Optional<Fruit> getFruit(String name){
+
+        Optional<Fruit> fruta = Fruit.find("name = ?1", name).firstResultOptional();
+
+        if (fruta.isPresent()){
+
+            return fruta;
+
+        }
+
+        return Optional.empty();
+
+    }
+
 }
